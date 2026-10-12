@@ -1,0 +1,22 @@
+models:
+  # secure + grants set on the latest version only
+  - name: lvp_secure
+    latest_version: 1
+    config:
+      latest_version_pointer:
+        enabled: true
+    versions:
+      - v: 1
+        config:
+          secure: true
+          grants:
+            select: ['PUBLIC']
+
+  # control: no secure, no grants
+  - name: lvp_plain
+    latest_version: 1
+    config:
+      latest_version_pointer:
+        enabled: true
+    versions:
+      - v: 1
