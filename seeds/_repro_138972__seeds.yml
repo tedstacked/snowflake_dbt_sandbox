@@ -1,0 +1,14 @@
+seeds:
+  - name: repro_138972_asset_camera_assignments
+    config:
+      column_types:
+        asset_camera_id: integer
+        asset_id: integer
+        camera_id: integer
+        date_installed: timestamp_tz
+        date_uninstalled: timestamp_tz
+  - name: repro_138972_cameras
+    config:
+      column_types:
+        camera_id: integer
+        device_serial: varchar
