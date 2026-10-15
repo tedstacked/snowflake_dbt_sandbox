@@ -1,0 +1,14 @@
+models:
+  - name: dim_repro_138972_cameras
+    description: ZD 138972 repro of the customer's dim_cameras
+    columns:
+      - name: camera_id
+      - name: camera_serial
+      - name: current_asset_id
+      - name: current_assignment_start_date
+        description: Start date of the current open camera-to-asset assignment
+  - name: dim_repro_138972_simple
+    description: ZD 138972 control model
+    columns:
+      - name: camera_id
+      - name: date_installed

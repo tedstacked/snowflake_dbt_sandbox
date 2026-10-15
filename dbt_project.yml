@@ -5,3 +5,10 @@ profile: 'default'
 
 model-paths: ["models"]
 macro-paths: ["macros"]
+seed-paths: ["seeds"]
+
+# ZD 138972 repro: mirrors the customer's project-level strict setting
+models:
+  snowflake_sandbox:
+    +materialized: view
+    +static_analysis: strict
