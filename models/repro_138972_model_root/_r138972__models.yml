@@ -1,0 +1,16 @@
+models:
+  - name: r138972_settlement_credit_eod
+    columns:
+      - name: id
+      - name: amount
+      - name: session_id
+  - name: r138972_stg_foo
+    columns:
+      - name: id
+      - name: amount
+      - name: session_id
+  - name: r138972_foo
+    columns:
+      - name: id
+      - name: amount
+      - name: session_id
