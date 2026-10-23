@@ -1,0 +1,15 @@
+# ZD 138972 isolation test: each source points at a DIFFERENT physical table (built by
+# MCP CLL Repro 2 - 138972 in ted_mcp_repro2_prod), so the LSP can't merge them.
+sources:
+  - name: repro_src_plain
+    database: analytics
+    schema: ted_mcp_repro2_prod
+    tables:
+      - name: repro_seed_strict
+  - name: repro_src_strict_b
+    database: analytics
+    schema: ted_mcp_repro2_prod
+    config:
+      static_analysis: strict
+    tables:
+      - name: repro_138972_cameras
