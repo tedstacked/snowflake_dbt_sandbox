@@ -1,0 +1,15 @@
+# ZD 138972: sources over an existing FKA50167 table (built by the MCP CLL Repro - 138972 prod run).
+# repro_src mirrors EquipmentShare (no strict on sources). repro_src_strict adds strict on the source.
+sources:
+  - name: repro_src
+    database: analytics
+    schema: ted_mcp_repro_prod
+    tables:
+      - name: repro_138972_asset_camera_assignments
+  - name: repro_src_strict
+    database: analytics
+    schema: ted_mcp_repro_prod
+    config:
+      static_analysis: strict
+    tables:
+      - name: repro_138972_asset_camera_assignments

@@ -1,0 +1,10 @@
+seeds:
+  - name: repro_seed_strict
+    config:
+      static_analysis: strict
+      column_types:
+        asset_camera_id: integer
+        asset_id: integer
+        camera_id: integer
+        date_installed: timestamp_tz
+        date_uninstalled: timestamp_tz
