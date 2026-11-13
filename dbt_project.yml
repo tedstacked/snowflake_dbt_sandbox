@@ -6,9 +6,19 @@ profile: 'default'
 model-paths: ["models"]
 macro-paths: ["macros"]
 seed-paths: ["seeds"]
+snapshot-paths: ["snapshots"]
 
 # ZD 138972 repro: mirrors the customer's project-level strict setting
 models:
   snowflake_sandbox:
     +materialized: view
+    +static_analysis: strict
+
+# ZD 138972 repro: the customer's fix, strict for seeds and snapshots too
+seeds:
+  snowflake_sandbox:
+    +static_analysis: strict
+
+snapshots:
+  snowflake_sandbox:
     +static_analysis: strict
