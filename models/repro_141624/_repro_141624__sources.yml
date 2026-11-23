@@ -1,0 +1,14 @@
+# ZD 141624: dbt State with a source in an inbound Snowflake share.
+# SNOWFLAKE_SAMPLE_DATA is a share imported from SFC_SAMPLES, like the customer's Lightcast share.
+sources:
+  - name: repro_141624_share
+    database: SNOWFLAKE_SAMPLE_DATA
+    schema: TPCH_SF1
+    tables:
+      - name: nation
+      - name: region
+  - name: repro_141624_ctrl
+    database: "{{ target.database }}"
+    schema: "{{ target.schema }}"
+    tables:
+      - name: repro_141624_ctrl_src
