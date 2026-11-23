@@ -18,3 +18,15 @@
   {% do run_query(q) %}
   {{ log('CTRL created/exists: ' ~ target.database ~ '.' ~ target.schema ~ '.repro_141624_ctrl_src', info=True) }}
 {% endmacro %}
+
+{% macro repro_141624_find_views() %}
+  {% set q %}
+    select table_schema, table_name, table_type, is_secure
+    from snowflake_sample_data.information_schema.views
+    where table_schema <> 'INFORMATION_SCHEMA'
+    order by 1, 2 limit 20
+  {% endset %}
+  {% set rows = run_query(q).rows %}
+  {{ log('VIEWCOUNT ' ~ rows | length, info=True) }}
+  {% for r in rows %}{{ log('VIEW ' ~ r | join(' | '), info=True) }}{% endfor %}
+{% endmacro %}
