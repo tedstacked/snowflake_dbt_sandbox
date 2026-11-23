@@ -21,7 +21,7 @@
 
 {% macro repro_141624_find_views() %}
   {% set q %}
-    select table_schema, table_name, table_type, is_secure
+    select table_schema, table_name, is_secure
     from snowflake_sample_data.information_schema.views
     where table_schema <> 'INFORMATION_SCHEMA'
     order by 1, 2 limit 20
